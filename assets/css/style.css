@@ -279,17 +279,24 @@ section:first-of-type { margin-top: 2.5rem; }
 .course-name { font-weight: 600; margin: 0; }
 .course-meta { font-size: 0.875rem; color: var(--color-text-muted); margin: 0.15rem 0 0; }
 
-/* ---------- Gallery ---------- */
-.gallery-intro { color: var(--color-text-muted); margin: 0 0 1.5rem; }
+/* ---------- Gallery (masonry on the dedicated Photos page) ---------- */
 .gallery {
-  column-count: 2;
+  /* TUNE: --col is the photo column width — larger = bigger photos / fewer
+     columns. Masonry columns let portrait & landscape photos keep their real
+     shapes (no cropping). The gallery fills the content column. */
+  --col: 360px;   /* ~2 comfortable columns in the content width; lower toward
+                     ~250px for 3 columns, or raise for fewer/larger ones */
+  column-width: var(--col);
   column-gap: 0.75rem;
 }
 .gallery img {
   width: 100%;
+  height: auto;                 /* preserve original aspect ratio — no cropping */
+  display: block;
+  margin: 0 0 0.75rem;          /* vertical gap between stacked photos */
   border-radius: 6px;
-  margin-bottom: 0.75rem;
   border: 1px solid var(--color-border);
+  break-inside: avoid;          /* never split a photo across two columns */
 }
 
 /* ---------- Contact ---------- */
@@ -362,7 +369,6 @@ button:focus-visible {
 
 @media (max-width: 420px) {
   .hero-name { font-size: 1.7rem; }
-  .gallery { column-count: 1; }
   .footer-inner { flex-direction: column; gap: 0.4rem; }
 }
 

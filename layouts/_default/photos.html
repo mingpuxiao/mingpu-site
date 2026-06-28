@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="container">
+  <section class="photo-page" style="margin-top:2.5rem">
+    <h1 class="hero-name">{{ .Title }}</h1>
+    {{- with .Content }}
+    <div class="bio" style="margin-top:1rem">{{ . }}</div>
+    {{- end }}
+    {{- with hugo.Data.photos }}
+    <div class="gallery" style="margin-top:1.75rem">
+      {{- range . }}
+      <img src="{{ .file | relURL }}" alt="{{ .alt }}" loading="lazy">
+      {{- end }}
+    </div>
+    {{- end }}
+  </section>
+</div>
+{{ end }}

@@ -100,18 +100,5 @@
   </section>
   {{- end }}
 
-  <!-- ===== Beyond Research ===== -->
-  {{- with hugo.Data.photos }}
-  <section id="trail" aria-labelledby="trail-title">
-    <h2 id="trail-title" class="section-title">On the Trail</h2>
-    <p class="gallery-intro">Outside of research, I enjoy hiking and exploring national parks with my family. A few photos from the trails:</p>
-    <div class="gallery">
-      {{- range . }}
-      <img src="{{ .file | relURL }}" alt="{{ .alt }}" loading="lazy">
-      {{- end }}
-    </div>
-  </section>
-  {{- end }}
-
 </div>
 {{ end }}

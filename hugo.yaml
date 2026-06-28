@@ -57,6 +57,9 @@ menu:
     - name: "CV"
       url: "/files/cv.pdf"
       weight: 30
+    - name: "Hiking"
+      url: "/photos/"
+      weight: 40
 
 markup:
   goldmark:
