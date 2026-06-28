@@ -1,0 +1,20 @@
+# ============================================================
+#  Photos for the "Beyond Research" gallery. To add one, drop a
+#  resized JPEG (long edge ~1200px) in static/images/hikes/ and
+#  add an entry here with descriptive alt text.
+# ============================================================
+
+- file: "images/hikes/hike5.jpg"
+  alt: "Hiking along a high mountain ridge at sunset, carrying my child"
+
+- file: "images/hikes/hike1.jpg"
+  alt: "Wading up the river through The Narrows, Zion National Park"
+
+- file: "images/hikes/hike2.jpg"
+  alt: "A family hike past an alpine lake and meadow in the mountains"
+
+- file: "images/hikes/hike3.jpg"
+  alt: "Among the red-rock hoodoos and pines of Bryce Canyon National Park"
+
+- file: "images/hikes/hike4.jpg"
+  alt: "On a misty trail below a glacier-draped peak"

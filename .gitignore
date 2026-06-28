@@ -1,0 +1,15 @@
+# Hugo build output (generated; never commit)
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Hugo deploy / module caches
+/.hugo_cache/
+
+# macOS
+.DS_Store
+
+# Editor cruft
+*.swp
+.idea/
+.vscode/

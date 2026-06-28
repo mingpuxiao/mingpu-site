@@ -1,0 +1,63 @@
+# ============================================================
+#  Publications & papers. Newest/most important first within
+#  each group. The homepage groups these automatically by
+#  "status": the job market paper, then working papers, then
+#  publications.
+#
+#  Fields:
+#    title            (required)
+#    coauthors        list of co-authors ("with ..."); omit yourself
+#    year             integer, used for ordering publications
+#    status           job market paper | working paper | under review |
+#                     revise and resubmit | forthcoming | accepted | published
+#    venue            outlet / full citation (publications)
+#    abstract         shown in full for the job market paper
+#    note             short note, e.g. "in Chinese"
+#    pdf              local file, e.g. "files/paper.pdf" (drop PDF in static/files/)
+#    link             external URL (DOI, SSRN, publisher) if no local PDF
+#    job_market_paper true for THE job market paper
+# ============================================================
+
+- title: "Legitimizing State Capitalism: Nationalism and Public Support for State Ownership in China"
+  status: "job market paper"
+  job_market_paper: true
+  pdf: ""
+  link: ""
+  abstract: >-
+    Why do citizens support state ownership despite its widely perceived
+    inefficiency? Existing explanations emphasize material interests and
+    socialist legacies; this paper identifies a powerful but overlooked
+    ideational source of legitimacy — nationalism — that sustains public
+    support for China's state-capitalist system. Drawing on a large corpus of
+    party newspapers (1990–2024), I show that the Chinese state has actively
+    reframed state-owned enterprises (SOEs) as symbols of the nation through
+    propaganda. Using nationally representative surveys (2001–2025) and a
+    factorial difference-in-differences design, I find that nationalism is one
+    of the strongest predictors and likely a causal driver of support for state
+    ownership. A conjoint experiment further reveals the mechanism: outgroup
+    animosity, or the perception of SOEs as shields against external threats,
+    primarily drives the effect of nationalism on support for the
+    state-capitalist system. These findings suggest that authoritarian regimes
+    can sustain the legitimacy of state-led development not only through
+    material performance but through symbolic and emotional appeals, pointing to
+    an affective foundation of economic legitimacy under authoritarianism.
+
+- title: "The World Trade Organization and U.S. Domestic Politics"
+  coauthors: ["Marc-Andreas Muendler", "T. Renee Bowen", "J. Lawrence Broz"]
+  status: "working paper"
+  pdf: ""
+  link: ""
+
+- title: "The Transformation, Typology, and Characteristics of Economic Values among the Chinese Public"
+  coauthors: ["Tangbiao Xiao"]
+  status: "forthcoming"
+  year: 2026
+  venue: "In Survey Report on Social Governance in the New Era [新时代社会治理调查报告], edited by Wenfang Tang, Jie Chen, and Tangbiao Xiao. Guangzhou: Sun Yat-sen University Press, forthcoming 2026."
+  note: "World Values Survey Wave 8, China, 2025. In Chinese."
+
+- title: "What Influences Chinese Citizens' Political Values of Order and Stability?"
+  coauthors: ["Tangbiao Xiao"]
+  status: "published"
+  year: 2017
+  venue: "Administrative Tribune [行政论坛] 143, no. 5 (2017): 73–81."
+  note: "In Chinese."

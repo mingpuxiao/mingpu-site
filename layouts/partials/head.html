@@ -1,0 +1,39 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{- $title := cond .IsHome site.Title (printf "%s · %s" .Title site.Title) }}
+  <title>{{ $title }}</title>
+
+  {{- $desc := or .Description site.Params.description }}
+  <meta name="description" content="{{ $desc }}">
+  <meta name="author" content="{{ site.Params.author }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <!-- Open Graph / social link previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.Title }}">
+  <meta property="og:title" content="{{ $title }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  {{- with site.Params.photo }}
+  <meta property="og:image" content="{{ . | absURL }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="{{ . | absURL }}">
+  {{- end }}
+  <meta name="twitter:title" content="{{ $title }}">
+  <meta name="twitter:description" content="{{ $desc }}">
+
+  <!-- Favicons -->
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32x32.png" | relURL }}">
+  <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+
+  <!-- Styles (processed through Hugo Pipes) -->
+  {{- with resources.Get "css/style.css" }}
+    {{- if hugo.IsProduction }}
+      {{- $css := . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+    {{- else }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{- end }}
+  {{- end }}

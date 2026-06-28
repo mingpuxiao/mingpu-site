@@ -1,0 +1,69 @@
+# ============================================================
+#  Site configuration. Most day-to-day edits happen here or in
+#  the data/ files. See UPDATING.md for a plain-language guide.
+# ============================================================
+
+baseURL: "https://mingpuxiao.github.io/mingpu-site/"
+title: "Mingpu Xiao"
+enableEmoji: false
+
+# Drop generated files Hugo can't clean on its own.
+ignoreFiles:
+  - "\\.DS_Store$"
+
+params:
+  # --- Identity (shown in the hero and meta tags) ---
+  author: "Mingpu Xiao"
+  role: "Ph.D. Candidate"
+  department: "Department of Political Science"
+  university: "University of California, San Diego"
+  year_in_program: "Sixth-year Ph.D. candidate"
+  email: "mixiao@ucsd.edu"
+  photo: "images/photo.jpg"
+  photo_alt: "Mingpu Xiao"
+
+  # One-line description used for the meta tag / search engines / link previews.
+  description: "Mingpu Xiao is a Ph.D. candidate in Political Science at UC San Diego studying comparative political economy and political behavior in authoritarian regimes, with a regional focus on China."
+
+  # --- Advising (grad-student specific) ---
+  advisors: "Margaret E. Roberts and Victor Shih"
+  committee: "J. Lawrence Broz, Megumi Naoi, and Francisco Garfias"
+
+  # --- Research interests (rendered as keyword tags) ---
+  research_interests:
+    - "Political Economy"
+    - "Authoritarian Politics"
+    - "State and Market"
+    - "Public Opinion"
+    - "Information Politics"
+    - "Computational Social Science"
+
+# Top navigation. Add a CV entry here once a cv.pdf is in static/files/
+#   - name: "CV"
+#     url: "/files/cv.pdf"
+#     weight: 25
+menu:
+  main:
+    - name: "Research"
+      url: "/#research"
+      weight: 10
+    - name: "Teaching"
+      url: "/#teaching"
+      weight: 20
+    - name: "Contact"
+      url: "/#contact"
+      weight: 30
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true   # allow inline HTML inside Markdown
+  highlight:
+    noClasses: false
+
+# Cleaner, simpler output: no taxonomies we don't use.
+disableKinds:
+  - taxonomy
+  - term
+  - RSS
+  - sitemap

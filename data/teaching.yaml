@@ -1,0 +1,28 @@
+# ============================================================
+#  Teaching history. Newest first.
+#    course | role | institution | level | term
+# ============================================================
+
+- course: "Political Inquiry"
+  role: "Teaching Assistant / Section Leader"
+  institution: "UC San Diego"
+  level: "Undergraduate"
+  term: "Fall 2025, Spring 2025"
+
+- course: "Introduction to Comparative Politics"
+  role: "Teaching Assistant / Section Leader"
+  institution: "UC San Diego"
+  level: "Undergraduate"
+  term: "Winter 2025, Fall 2024, Fall 2023"
+
+- course: "Applied Data Analysis for Political Science"
+  role: "Teaching Assistant"
+  institution: "UC San Diego"
+  level: "Undergraduate"
+  term: "Summer 2023"
+
+- course: "Policy Responses to Global Problems"
+  role: "Teaching Assistant"
+  institution: "UC San Diego"
+  level: "Graduate"
+  term: "Fall 2021"

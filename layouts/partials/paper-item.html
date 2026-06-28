@@ -1,0 +1,14 @@
+{{- /* Renders one paper. Context (.) is a paper entry from data/papers.yaml */ -}}
+{{- $showBadge := and .status (not (in (slice "working paper" "published") .status)) -}}
+<article class="paper">
+  {{- if .pdf }}
+  <h3 class="paper-title"><a href="{{ .pdf | relURL }}">{{ .title }}</a>{{ if $showBadge }}<span class="badge">{{ .status }}</span>{{ end }}</h3>
+  {{- else if .link }}
+  <h3 class="paper-title"><a href="{{ .link }}">{{ .title }}</a>{{ if $showBadge }}<span class="badge">{{ .status }}</span>{{ end }}</h3>
+  {{- else }}
+  <h3 class="paper-title plain">{{ .title }}{{ if $showBadge }}<span class="badge">{{ .status }}</span>{{ end }}</h3>
+  {{- end }}
+  {{- with .coauthors }}<p class="paper-meta">with {{ delimit . ", " ", and " }}</p>{{ end }}
+  {{- with .venue }}<p class="paper-venue">{{ . }}</p>{{ end }}
+  {{- with .note }}<p class="paper-meta">{{ . }}</p>{{ end }}
+</article>

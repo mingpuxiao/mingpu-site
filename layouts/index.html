@@ -1,0 +1,126 @@
+{{ define "main" }}
+{{ $papers := hugo.Data.papers }}
+{{ $jmp := where $papers "job_market_paper" true }}
+{{ $working := where $papers "status" "in" (slice "working paper" "under review" "revise and resubmit" "work in progress") }}
+{{ $published := where $papers "status" "in" (slice "published" "forthcoming" "accepted") }}
+
+<div class="container">
+
+  <!-- ===== Hero ===== -->
+  <header class="hero">
+    {{- with site.Params.photo }}
+    <img class="hero-photo" src="{{ . | relURL }}"
+         alt="{{ site.Params.photo_alt | default site.Params.author }}"
+         width="160" height="160">
+    {{- end }}
+    <div class="hero-body">
+      <h1 class="hero-name">{{ site.Params.author }}</h1>
+      <p class="hero-affil">
+        {{ site.Params.role }}, {{ site.Params.department }}<br>
+        <span class="muted">{{ site.Params.university }}</span>
+      </p>
+      <p class="hero-meta">
+        <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== About / bio ===== -->
+  <section id="about" aria-label="About">
+    <div class="bio">
+      {{ .Content }}
+    </div>
+
+    {{- with site.Params.research_interests }}
+    <div class="interests" aria-label="Research interests">
+      {{- range . }}<span class="interest-tag">{{ . }}</span>{{ end }}
+    </div>
+    {{- end }}
+
+    {{- if or site.Params.advisors site.Params.committee }}
+    <p class="advising">
+      {{- with site.Params.advisors }}<strong>Advisors:</strong> {{ . }}.{{ end }}
+      {{- with site.Params.committee }}<br><strong>Dissertation committee:</strong> {{ . }}.{{ end }}
+    </p>
+    {{- end }}
+  </section>
+
+  <!-- ===== Research ===== -->
+  <section id="research" aria-labelledby="research-title">
+    <h2 id="research-title" class="section-title">Research</h2>
+
+    {{- range $jmp }}
+    <article class="jmp">
+      <span class="badge">Job Market Paper</span>
+      {{- if .pdf }}
+      <h3 class="paper-title"><a href="{{ .pdf | relURL }}">{{ .title }}</a></h3>
+      {{- else if .link }}
+      <h3 class="paper-title"><a href="{{ .link }}">{{ .title }}</a></h3>
+      {{- else }}
+      <h3 class="paper-title plain">{{ .title }}</h3>
+      {{- end }}
+      {{- with .coauthors }}<p class="paper-meta">with {{ delimit . ", " ", and " }}</p>{{ end }}
+      {{- with .abstract }}<p class="jmp-abstract">{{ . }}</p>{{ end }}
+    </article>
+    {{- end }}
+
+    {{- if $working }}
+    <p class="subgroup-title">Working Papers</p>
+    <div class="paper-list">
+      {{- range $working }}
+      {{- partial "paper-item.html" . }}
+      {{- end }}
+    </div>
+    {{- end }}
+
+    {{- if $published }}
+    <p class="subgroup-title">Publications</p>
+    <div class="paper-list">
+      {{- range sort $published "year" "desc" }}
+      {{- partial "paper-item.html" . }}
+      {{- end }}
+    </div>
+    {{- end }}
+  </section>
+
+  <!-- ===== Teaching ===== -->
+  {{- with hugo.Data.teaching }}
+  <section id="teaching" aria-labelledby="teaching-title">
+    <h2 id="teaching-title" class="section-title">Teaching</h2>
+    <div class="teaching-list">
+      {{- range . }}
+      <div class="course">
+        <p class="course-name">{{ .course }}</p>
+        <p class="course-meta">
+          {{ .role }}{{ with .level }} · {{ . }}{{ end }} · {{ .institution }}{{ with .term }} · {{ . }}{{ end }}
+        </p>
+      </div>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+  <!-- ===== Beyond Research ===== -->
+  {{- with hugo.Data.photos }}
+  <section id="beyond" aria-labelledby="beyond-title">
+    <h2 id="beyond-title" class="section-title">Beyond Research</h2>
+    <p class="gallery-intro">Outside of research, I enjoy hiking and exploring national parks with my family. A few photos from the trails:</p>
+    <div class="gallery">
+      {{- range . }}
+      <img src="{{ .file | relURL }}" alt="{{ .alt }}" loading="lazy">
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-title">Contact</h2>
+    <div class="contact">
+      <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
+      <p>{{ site.Params.department }}<br>{{ site.Params.university }}</p>
+    </div>
+  </section>
+
+</div>
+{{ end }}

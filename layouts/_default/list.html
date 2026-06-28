@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="container">
+  <section style="margin-top:2.5rem">
+    <h1 class="hero-name">{{ .Title }}</h1>
+    {{- with .Content }}<div class="bio" style="margin-top:1.5rem">{{ . }}</div>{{ end }}
+    {{- with .Pages }}
+    <div class="paper-list" style="margin-top:2rem">
+      {{- range . }}
+      <article class="paper">
+        <h3 class="paper-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        {{- with .Date }}<p class="paper-meta">{{ .Format "January 2, 2006" }}</p>{{ end }}
+        {{- with .Description }}<p class="paper-venue">{{ . }}</p>{{ end }}
+      </article>
+      {{- end }}
+    </div>
+    {{- end }}
+  </section>
+</div>
+{{ end }}

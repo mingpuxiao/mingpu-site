@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="container">
+  <article class="page">
+    <h1 class="hero-name" style="margin-top:2.5rem">{{ .Title }}</h1>
+    {{- with .Description }}<p class="hero-meta">{{ . }}</p>{{ end }}
+    <div class="bio" style="margin-top:1.5rem">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+{{ end }}
