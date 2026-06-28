@@ -3,7 +3,9 @@
 #  the data/ files. See UPDATING.md for a plain-language guide.
 # ============================================================
 
-baseURL: "https://mingpuxiao.github.io/mingpu-site/"
+# Final site lives at the root of the custom domain (no subpath).
+# `hugo server` overrides this to http://localhost:PORT/ for local preview.
+baseURL: "https://mingpuxiao.com/"
 title: "Mingpu Xiao"
 enableEmoji: false
 
@@ -38,20 +40,22 @@ params:
     - "Information Politics"
     - "Computational Social Science"
 
-# Top navigation. Add a CV entry here once a cv.pdf is in static/files/
-#   - name: "CV"
-#     url: "/files/cv.pdf"
-#     weight: 25
+# Top navigation. The "CV" tab is a placeholder pointing at /files/cv.pdf —
+# add that PDF to static/files/ to activate it, or change the url to an
+# external link (e.g. a Google Drive / Dropbox share).
 menu:
   main:
+    - name: "Bio"
+      url: "/#bio"
+      weight: 5
     - name: "Research"
       url: "/#research"
       weight: 10
     - name: "Teaching"
       url: "/#teaching"
       weight: 20
-    - name: "Contact"
-      url: "/#contact"
+    - name: "CV"
+      url: "/files/cv.pdf"
       weight: 30
 
 markup:

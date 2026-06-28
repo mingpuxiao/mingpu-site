@@ -7,11 +7,11 @@
 <div class="container">
 
   <!-- ===== Hero ===== -->
-  <header class="hero">
+  <header class="hero" id="bio">
     {{- with site.Params.photo }}
     <img class="hero-photo" src="{{ . | relURL }}"
          alt="{{ site.Params.photo_alt | default site.Params.author }}"
-         width="160" height="160">
+         width="200" height="200">
     {{- end }}
     <div class="hero-body">
       <h1 class="hero-name">{{ site.Params.author }}</h1>
@@ -25,8 +25,8 @@
     </div>
   </header>
 
-  <!-- ===== About / bio ===== -->
-  <section id="about" aria-label="About">
+  <!-- ===== About / bio (anchored via the hero #bio above) ===== -->
+  <section aria-label="Biography">
     <div class="bio">
       {{ .Content }}
     </div>
@@ -64,19 +64,19 @@
     </article>
     {{- end }}
 
-    {{- if $working }}
-    <p class="subgroup-title">Working Papers</p>
+    {{- if $published }}
+    <p class="subgroup-title">Publications</p>
     <div class="paper-list">
-      {{- range $working }}
+      {{- range sort $published "year" "desc" }}
       {{- partial "paper-item.html" . }}
       {{- end }}
     </div>
     {{- end }}
 
-    {{- if $published }}
-    <p class="subgroup-title">Publications</p>
+    {{- if $working }}
+    <p class="subgroup-title">Working Papers</p>
     <div class="paper-list">
-      {{- range sort $published "year" "desc" }}
+      {{- range $working }}
       {{- partial "paper-item.html" . }}
       {{- end }}
     </div>
@@ -102,8 +102,8 @@
 
   <!-- ===== Beyond Research ===== -->
   {{- with hugo.Data.photos }}
-  <section id="beyond" aria-labelledby="beyond-title">
-    <h2 id="beyond-title" class="section-title">Beyond Research</h2>
+  <section id="trail" aria-labelledby="trail-title">
+    <h2 id="trail-title" class="section-title">On the Trail</h2>
     <p class="gallery-intro">Outside of research, I enjoy hiking and exploring national parks with my family. A few photos from the trails:</p>
     <div class="gallery">
       {{- range . }}
@@ -112,15 +112,6 @@
     </div>
   </section>
   {{- end }}
-
-  <!-- ===== Contact ===== -->
-  <section id="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title" class="section-title">Contact</h2>
-    <div class="contact">
-      <p><a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a></p>
-      <p>{{ site.Params.department }}<br>{{ site.Params.university }}</p>
-    </div>
-  </section>
 
 </div>
 {{ end }}

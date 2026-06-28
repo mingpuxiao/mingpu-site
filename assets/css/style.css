@@ -5,20 +5,27 @@
    ============================================================ */
 
 :root {
-  --color-bg: #fdfbf8;          /* warm off-white */
-  --color-surface: #f5f0eb;     /* warm surface for cards */
-  --color-text: #2d2926;        /* warm charcoal body text */
-  --color-text-muted: #6b6560;  /* warm gray metadata/dates */
-  --color-accent: #5c7a8a;      /* desaturated slate blue */
-  --color-accent-hover: #3d5a6a;/* darker on hover */
-  --color-border: #e2ddd5;      /* warm border */
-  --color-highlight: #f0ebe3;   /* job market paper background */
+  /* ---- Color palette (white background) ---- */
+  --color-bg: #ffffff;          /* page background — white */
+  --color-surface: #f3f5f7;     /* cards, tags, badges (light cool gray) */
+  --color-text: #23272b;        /* body text (near-black) */
+  --color-text-muted: #5a6672;  /* metadata/dates (muted gray, AA on white) */
+  --color-accent: #4a6e80;      /* links & highlights (slate blue, AA on white) */
+  --color-accent-hover: #34525f;/* darker slate on hover */
+  --color-border: #e6e8eb;      /* hairline borders */
+  --color-highlight: #eef2f5;   /* job market paper background (light slate tint) */
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
 
-  --maxw: 720px;
-  --pad: 1.5rem;
+  /* ============================================================
+     LAYOUT — fine-tune these two values to taste:
+       --maxw : how wide the content column is
+       --pad  : the left/right page padding (side margin inside the column)
+     ============================================================ */
+  --maxw: 900px;                /* TUNE: main content max-width */
+  --pad: 1.5rem;                /* TUNE: left/right page padding */
+
   --section-gap: 4rem;
   --item-gap: 1.5rem;
 }
@@ -138,9 +145,9 @@ section:first-of-type { margin-top: 2.5rem; }
   margin-top: 2.5rem;
 }
 .hero-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 6px;   /* square headshot (slight rounding to match cards/photos) */
   object-fit: cover;
   flex: 0 0 auto;
   border: 1px solid var(--color-border);
