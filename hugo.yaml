@@ -66,8 +66,9 @@ markup:
     noClasses: false
 
 # Cleaner, simpler output: no taxonomies we don't use.
+# Sitemap is enabled (at /sitemap.xml) for search engines. No robots.txt is
+# generated, which leaves the whole site crawlable.
 disableKinds:
   - taxonomy
   - term
   - RSS
-  - sitemap
