@@ -1,8 +1,8 @@
 ---
 title: "Curriculum Vitae"
-description: "Download my current curriculum vitae."
+description: "View my current curriculum vitae."
 ---
 
-You can download a current copy of my curriculum vitae below.
+You can view my current curriculum vitae in your browser and download a copy if you wish.
 
-<a class="cv-download" href="/files/cv.pdf" download>Download CV (PDF)</a>
+<a class="cv-link" href="/files/cv.pdf">View CV (PDF)</a>

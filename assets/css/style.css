@@ -302,8 +302,8 @@ section:first-of-type { margin-top: 2.5rem; }
 /* ---------- Contact ---------- */
 .contact p { margin: 0 0 0.5rem; }
 
-/* ---------- CV download ---------- */
-.cv-download {
+/* ---------- CV link ---------- */
+.cv-link {
   display: inline-block;
   margin-top: 0.5rem;
   padding: 0.7rem 1rem;
@@ -312,7 +312,7 @@ section:first-of-type { margin-top: 2.5rem; }
   border-radius: 6px;
   font-weight: 600;
 }
-.cv-download:hover {
+.cv-link:hover {
   color: #fff;
   background: var(--color-accent-hover);
   text-decoration: none;
