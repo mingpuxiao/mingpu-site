@@ -40,9 +40,7 @@ params:
     - "Information Politics"
     - "Computational Social Science"
 
-# Top navigation. The "CV" tab is a placeholder pointing at /files/cv.pdf —
-# add that PDF to static/files/ to activate it, or change the url to an
-# external link (e.g. a Google Drive / Dropbox share).
+# Top navigation. The CV page contains a download link for static/files/cv.pdf.
 menu:
   main:
     - name: "Bio"
@@ -55,7 +53,7 @@ menu:
       url: "/#teaching"
       weight: 20
     - name: "CV"
-      url: "/files/cv.pdf"
+      url: "/cv/"
       weight: 30
     - name: "Hiking"
       url: "/photos/"
