@@ -24,6 +24,10 @@ params:
   photo: "images/photo.jpg"
   photo_alt: "Mingpu Xiao"
 
+  # GA4 web data stream ID (format: G-XXXXXXXXXX). Analytics stays disabled
+  # while this is blank. The site loads it only after visitor consent.
+  google_analytics_id: "G-6Q6G64Z9YG"
+
   # One-line description used for the meta tag / search engines / link previews.
   description: "Mingpu Xiao is a Ph.D. candidate in Political Science at UC San Diego studying comparative political economy and political behavior in authoritarian regimes, with a regional focus on China."
 

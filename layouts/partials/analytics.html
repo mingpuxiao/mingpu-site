@@ -1,0 +1,62 @@
+{{- with site.Params.google_analytics_id }}
+  {{- if not (findRE `^G-[A-Z0-9]+$` .) }}
+    {{- errorf "params.google_analytics_id must be a valid GA4 Measurement ID beginning with G-" }}
+  {{- end }}
+  <!-- Google Analytics 4: basic consent mode; no Google request before opt-in. -->
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+
+  (function () {
+    var id = {{ . | jsonify | safeJS }};
+    var loaded = false;
+    var api = window.mingpuAnalytics = window.mingpuAnalytics || {};
+
+    api.grant = function () {
+      gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'granted'
+      });
+      if (loaded) return;
+      loaded = true;
+
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+      document.head.appendChild(script);
+
+      gtag('js', new Date());
+      gtag('config', id, {
+        'allow_google_signals': false,
+        'allow_ad_personalization_signals': false
+      });
+    };
+
+    api.deny = function () {
+      gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
+    };
+
+    try {
+      if (localStorage.getItem('mingpu-analytics-consent') === 'granted') {
+        api.grant();
+      }
+    } catch (error) {
+      // If storage is unavailable, leave analytics disabled.
+    }
+  })();
+  </script>
+{{- end }}

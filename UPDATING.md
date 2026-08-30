@@ -25,6 +25,17 @@ make your change, then click the green **Commit changes** button.
 
 ## Common tasks
 
+### Enable or change Google Analytics
+Create a GA4 web data stream for the site, then copy its Measurement ID (it
+starts with `G-`). In `hugo.yaml`, set:
+
+```yaml
+  google_analytics_id: "G-XXXXXXXXXX"
+```
+
+Leave the value blank to disable Analytics completely. The site uses a consent
+banner and does not load Google Analytics until a visitor chooses to allow it.
+
 ### Change your bio
 Edit `content/_index.md`. The text below the `---` line is your bio. Leave a
 blank line between paragraphs.

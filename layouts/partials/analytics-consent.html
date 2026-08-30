@@ -1,0 +1,69 @@
+{{- with site.Params.google_analytics_id }}
+<aside class="analytics-consent" id="analytics-consent" role="dialog"
+       aria-labelledby="analytics-consent-title" aria-describedby="analytics-consent-text" hidden>
+  <div class="analytics-consent-copy">
+    <p id="analytics-consent-title"><strong>Optional analytics</strong></p>
+    <p id="analytics-consent-text">May I use Google Analytics to understand aggregate visits and approximate geographic trends? No advertising features are enabled.</p>
+  </div>
+  <div class="analytics-consent-actions">
+    <button class="consent-button consent-button-primary" type="button" data-analytics-choice="granted">Allow analytics</button>
+    <button class="consent-button" type="button" data-analytics-choice="denied">No thanks</button>
+    <a href="{{ "/privacy/" | relURL }}">Privacy</a>
+  </div>
+</aside>
+<script>
+(function () {
+  var key = 'mingpu-analytics-consent';
+  var banner = document.getElementById('analytics-consent');
+  if (!banner) return;
+
+  function readChoice() {
+    try { return localStorage.getItem(key); }
+    catch (error) { return null; }
+  }
+
+  function saveChoice(choice) {
+    try { localStorage.setItem(key, choice); }
+    catch (error) { /* Analytics remains disabled if storage is unavailable. */ }
+  }
+
+  function clearAnalyticsCookies() {
+    document.cookie.split(';').forEach(function (cookie) {
+      var name = cookie.split('=')[0].trim();
+      if (name !== '_ga' && name.indexOf('_ga_') !== 0) return;
+      document.cookie = name + '=; Max-Age=0; path=/; SameSite=Lax';
+      document.cookie = name + '=; Max-Age=0; path=/; domain=' + location.hostname;
+      document.cookie = name + '=; Max-Age=0; path=/; domain=.' + location.hostname;
+    });
+  }
+
+  function choose(choice) {
+    saveChoice(choice);
+    if (window.mingpuAnalytics) {
+      if (choice === 'granted') window.mingpuAnalytics.grant();
+      else {
+        window.mingpuAnalytics.deny();
+        clearAnalyticsCookies();
+      }
+    }
+    banner.hidden = true;
+  }
+
+  banner.addEventListener('click', function (event) {
+    var button = event.target.closest('[data-analytics-choice]');
+    if (button) choose(button.getAttribute('data-analytics-choice'));
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!event.target.closest('[data-reset-analytics-consent]')) return;
+    try { localStorage.removeItem(key); }
+    catch (error) { /* Keep analytics disabled. */ }
+    if (window.mingpuAnalytics) window.mingpuAnalytics.deny();
+    clearAnalyticsCookies();
+    window.location.reload();
+  });
+
+  if (!readChoice()) banner.hidden = false;
+})();
+</script>
+{{- end }}
