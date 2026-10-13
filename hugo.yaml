@@ -41,8 +41,7 @@ params:
     - "Chinese Politics"
     - "Comparative and International Political Economy"
     - "State-Building and Democratization"
-    - "Public Opinion and Contentious Politics"
-    - "Causal Inference and Computational Social Science"
+    - "Public Opinion and Political Behavior"
 
 # Top navigation. The CV page contains a download link for static/files/cv.pdf.
 menu:
