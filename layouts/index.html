@@ -60,23 +60,29 @@
       <h3 class="paper-title plain">{{ .title }}</h3>
       {{- end }}
       {{- with .coauthors }}<p class="paper-meta">with {{ delimit . ", " ", and " }}</p>{{ end }}
+      {{- if or .pdf .link }}
+      <p class="paper-links">
+        {{- if .pdf }}<a class="btn" href="{{ .pdf | relURL }}">PDF</a>{{ else }}<a class="btn" href="{{ .link }}">Paper</a>{{ end }}
+        {{- with .version }}<span class="version">Latest version: {{ . }}</span>{{ end }}
+      </p>
+      {{- end }}
       {{- with .abstract }}<p class="jmp-abstract">{{ . }}</p>{{ end }}
     </article>
-    {{- end }}
-
-    {{- if $published }}
-    <p class="subgroup-title">Publications</p>
-    <div class="paper-list">
-      {{- range sort $published "year" "desc" }}
-      {{- partial "paper-item.html" . }}
-      {{- end }}
-    </div>
     {{- end }}
 
     {{- if $working }}
     <p class="subgroup-title">Working Papers</p>
     <div class="paper-list">
       {{- range $working }}
+      {{- partial "paper-item.html" . }}
+      {{- end }}
+    </div>
+    {{- end }}
+
+    {{- if $published }}
+    <p class="subgroup-title">Publications</p>
+    <div class="paper-list">
+      {{- range sort $published "year" "desc" }}
       {{- partial "paper-item.html" . }}
       {{- end }}
     </div>

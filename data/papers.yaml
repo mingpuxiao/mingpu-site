@@ -11,53 +11,110 @@
 #    status           job market paper | working paper | under review |
 #                     revise and resubmit | forthcoming | accepted | published
 #    venue            outlet / full citation (publications)
-#    abstract         shown in full for the job market paper
+#    abstract         shown in full for the job market paper; for all
+#                     other papers it sits behind a collapsible
+#                     "Abstract" arrow
 #    note             short note, e.g. "in Chinese"
+#    version          date of the latest version (job market paper)
 #    pdf              local file, e.g. "files/paper.pdf" (drop PDF in static/files/)
 #    link             external URL (DOI, SSRN, publisher) if no local PDF
 #    job_market_paper true for THE job market paper
 # ============================================================
 
-- title: "Legitimizing State Capitalism: Nationalism and Public Support for State Ownership in China"
+- title: "Legitimizing State Capitalism: External Threat, Nationalism, and Support for State Ownership"
   status: "job market paper"
   job_market_paper: true
-  pdf: ""
+  pdf: "files/legitimizing-state-capitalism.pdf"
   link: ""
+  version: "October 10, 2026"
   abstract: >-
-    Why do citizens support state ownership despite its widely perceived
-    inefficiency? Existing explanations emphasize material interests and
-    socialist legacies; this paper identifies a powerful but overlooked
-    ideational source of legitimacy — nationalism — that sustains public
-    support for China's state-capitalist system. Drawing on a large corpus of
-    party newspapers (1990–2024), I show that the Chinese state has actively
-    reframed state-owned enterprises (SOEs) as symbols of the nation through
-    propaganda. Using nationally representative surveys (2001–2025) and a
-    factorial difference-in-differences design, I find that nationalism is one
-    of the strongest predictors and likely a causal driver of support for state
-    ownership. A conjoint experiment further reveals the mechanism: outgroup
-    animosity, or the perception of SOEs as shields against external threats,
-    primarily drives the effect of nationalism on support for the
-    state-capitalist system. These findings suggest that authoritarian regimes
-    can sustain the legitimacy of state-led development not only through
-    material performance but through symbolic and emotional appeals, pointing to
-    an affective foundation of economic legitimacy under authoritarianism.
+    State ownership has outlived the socialist ideology that once justified it.
+    In China, about half or more of citizens have favored expanding state
+    ownership since 1990, despite decades of market-oriented reform and the
+    well-documented inefficiency and corruption of state-owned enterprises
+    (SOEs). I argue that, under intensifying geopolitical rivalry, the Chinese
+    state has extended nationalism into the economy, invoking external threat to
+    present SOEs as guardians of national security. This frame may translate
+    into support for state ownership through two mechanisms: state firms come to
+    stand for “us” against “them” (identity), or state control promises
+    to insure the nation against foreign coercion (insurance). Analyses of high
+    school textbooks and 4.3 million party newspaper articles show that the
+    party-state has increasingly justified state ownership in nationalist terms.
+    A factorial difference-in-differences design around the 2012 Diaoyu/Senkaku
+    dispute shows that support for state ownership was markedly higher where
+    exposure to nationalist mobilization was greater, a gap that opened only
+    after the dispute. A conjoint experiment favors identity over insurance: the
+    premium on state control is largest when SOEs are framed as safeguards
+    against foreign threat, and no larger in chokepoint sectors such as critical
+    minerals and high technology than elsewhere.
 
-- title: "The World Trade Organization and U.S. Domestic Politics"
+- title: "Economic Foundations of Authoritarian Leviathans: State-Owned Enterprises and State-Building in Contemporary China"
+  status: "working paper"
+  abstract: >-
+    How has China built an extensive bureaucracy and world-leading public
+    infrastructure despite limited tax capacity and the absence of
+    representative institutions? I argue that under financial repression, state
+    firms can borrow cheaply from state banks, and local governments use them
+    both as off-budget fiscal intermediaries and as an extended arm of the
+    state that provides public goods directly. Treating natural disasters as
+    exogenous shocks to local fiscal pressure, I show in a firm-level
+    difference-in-differences design that when disasters strike, local state
+    firms borrow significantly more than private firms. A city-level panel of
+    state-firm financial indicators shows that cities whose state sectors have
+    greater borrowing capacity are better able to sustain their bureaucracies
+    and public goods provision.
+
+- title: "Sanctioned into Statism: Trade Embargoes and Public Demand for State Control"
+  status: "working paper"
+  abstract: >-
+    Does the link between external threat and support for state ownership
+    extend beyond China? Linking the Global Sanctions Database to World Values
+    Survey respondents and using a cohort-exposure design, I find that each
+    year of adult life under a comprehensive trade embargo significantly raises
+    support for state ownership, an effect concentrated in non-democracies.
+
+- title: "Modernization in the Shadow of Leviathan: State-Directed Development and the Paths to Democracy"
+  status: "working paper"
+  abstract: >-
+    Does economic development bring democracy? I develop a conditional
+    modernization theory in which state ownership of the economy diverts the
+    gains of growth from democratization to the maintenance of authoritarian
+    rule. Dating the onset of modern economic growth for more than 100
+    countries from the economic history literature, I find that rising income
+    is accompanied by democratization mainly where the economy at take-off was
+    in private rather than state hands.
+
+- title: "International Origins of Populism: WTO and U.S. Presidential Elections"
   coauthors: ["Marc-Andreas Muendler", "T. Renee Bowen", "J. Lawrence Broz"]
   status: "working paper"
-  pdf: ""
-  link: ""
+  abstract: >-
+    To what extent do rulings on trade disputes at the World Trade Organization
+    (WTO) affect U.S. domestic politics? We use the random assignment of WTO
+    Appellate Body (AB) judges to disputes as an instrumental variable to
+    predict WTO-AB rulings. We find that voters in U.S. counties more exposed
+    to adverse WTO-AB rulings were significantly more likely to vote for the
+    Republican candidate in the 2016 U.S. presidential elections than for the
+    Republican candidate in 2012. We measure a county’s exposure as the
+    cumulative share of employment in industries that are affected by AB
+    rulings, and we control for county characteristics and other trade flows,
+    including imports from China. We find this causal effect of WTO-AB rulings
+    on U.S. election outcomes to depend on the average educational attainment
+    in the county and to be concentrated in counties with a high population
+    share of residents with less than a college degree. These findings support
+    the view that WTO-AB rulings are salient for U.S. domestic politics and
+    have contributed to a backlash from voters in counties whose employment was
+    exposed to adverse WTO-AB rulings.
 
-- title: "The Transformation, Typology, and Characteristics of Economic Values among the Chinese Public"
+- title: "The Evolution, Typology, and Characteristics of Chinese Citizens’ Economic Values"
   coauthors: ["Tangbiao Xiao"]
   status: "forthcoming"
   year: 2026
-  venue: "In Survey Report on Social Governance in the New Era [新时代社会治理调查报告], edited by Wenfang Tang, Jie Chen, and Tangbiao Xiao. Guangzhou: Sun Yat-sen University Press, forthcoming 2026."
+  venue: "In Report on Social Governance in the New Era [新时代社会治理调查报告], edited by Wenfang Tang, Jie Chen, and Tangbiao Xiao. Guangzhou: Sun Yat-sen University Press, forthcoming 2026."
   note: "World Values Survey Wave 8, China, 2025. In Chinese."
 
-- title: "What Influences Chinese Citizens' Political Values of Order and Stability?"
+- title: "Determinants of Public Attitudes toward Political Order"
   coauthors: ["Tangbiao Xiao"]
   status: "published"
   year: 2017
-  venue: "Administrative Tribune [行政论坛] 143, no. 5 (2017): 73–81."
+  venue: "Administrative Tribune [行政论坛] 24, no. 5 (2017): 73–81. Indexed in the Chinese Social Sciences Citation Index (CSSCI)."
   note: "In Chinese."

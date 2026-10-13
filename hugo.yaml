@@ -29,7 +29,7 @@ params:
   google_analytics_id: "G-6Q6G64Z9YG"
 
   # One-line description used for the meta tag / search engines / link previews.
-  description: "Mingpu Xiao is a Ph.D. candidate in Political Science at UC San Diego studying comparative political economy and political behavior in authoritarian regimes, with a regional focus on China."
+  description: "Mingpu Xiao is a Ph.D. candidate in Political Science at UC San Diego studying authoritarian politics and comparative and international political economy, with a regional focus on China."
 
   # --- Advising (grad-student specific) ---
   advisors: "Margaret E. Roberts and Victor Shih"
@@ -37,12 +37,12 @@ params:
 
   # --- Research interests (rendered as keyword tags) ---
   research_interests:
-    - "Political Economy"
     - "Authoritarian Politics"
-    - "State and Market"
-    - "Public Opinion"
-    - "Information Politics"
-    - "Computational Social Science"
+    - "Chinese Politics"
+    - "Comparative and International Political Economy"
+    - "State-Building and Democratization"
+    - "Public Opinion and Contentious Politics"
+    - "Causal Inference and Computational Social Science"
 
 # Top navigation. The CV page contains a download link for static/files/cv.pdf.
 menu:

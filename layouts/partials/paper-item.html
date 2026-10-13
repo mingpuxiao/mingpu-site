@@ -11,4 +11,10 @@
   {{- with .coauthors }}<p class="paper-meta">with {{ delimit . ", " ", and " }}</p>{{ end }}
   {{- with .venue }}<p class="paper-venue">{{ . }}</p>{{ end }}
   {{- with .note }}<p class="paper-meta">{{ . }}</p>{{ end }}
+  {{- with .abstract }}
+  <details class="abstract">
+    <summary>Abstract</summary>
+    <p>{{ . }}</p>
+  </details>
+  {{- end }}
 </article>
